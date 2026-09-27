@@ -1,10 +1,47 @@
-# CardioVision-AI-TensorFlow-Cardiac-Risk-Predictor-
-Welcome to the CardioVision AI project repository. This project focuses on developing a robust machine learning model using TensorFlow to predict heart disease in patients. The final model achieved an accuracy of 85.33% with a recall rate of 90%. The repository includes the final report, dataset, and several Python files for different stages of the project.
+# CardioVision AI: TensorFlow Cardiac Risk Predictor
 
-The dataset used in this study comprises various medical parameters. These features are critical indicators of cardiovascular health and are used to train and evaluate the predictive model. The Exploratory Data Analysis (EDA) process involves summarizing the dataset's main features using visual methods to identify trends, patterns, and potential anomalies. The EDA_HeartDisease Jupyter Notebook file contains the code for generating histograms and various plots to visualize the distribution of key variables.
+A neural network built with TensorFlow that predicts heart disease from routine clinical measurements.
 
-Various model structures were rigorously tested to determine the most effective approach. These structures ranged from simple feedforward networks to more complex architectures. Parameter optimization focused on refining regularization and learning rates to enhance model performance. The implementation details for all studies are provided in the Parameter_Optimization_HeartDisease Jupyter Notebook file.
+**Final model: 85.33% accuracy, 90% recall.** High recall was a priority: in screening, missing a patient who has heart disease is costlier than a false alarm.
 
-The final model incorporates the best-performing neural network structure and optimized parameters. Detailed analysis and results can be found in the Final_Model_HeartDisease Jupyter Notebook file.
+## Repository contents
 
-The final report ties everything together, providing a comprehensive overview of the project's objectives, methodologies, and findings. It serves as a detailed document that encapsulates the entire workflow, from data preprocessing and exploratory analysis to model selection, optimization, and final evaluation. This cohesive narrative ensures that all aspects of the project are thoroughly documented and easily accessible.
+| File | What it contains |
+|---|---|
+| `EDA_HeartDisease.ipynb` | Exploratory data analysis: distributions, histograms and plots of the key clinical variables to find trends, patterns and anomalies |
+| `Parameter_Optimization_HeartDisease.ipynb` | Model search: network structures from simple feedforward to deeper architectures, plus tuning of regularization and learning rate |
+| `Final_Model_HeartDisease.ipynb` | The final model: best-performing structure and parameters, training and evaluation |
+| `heart_statlog_cleveland_hungary_final.csv` | The dataset (see below) |
+| `CardioVisionAI_Project_Report.pdf` | Full project report: objectives, methodology, model selection, optimization and results |
+
+## Dataset
+
+1,190 patient records combining the Statlog, Cleveland and Hungarian heart-disease datasets. Each record has 11 clinical features and a binary `target` (1 = heart disease):
+
+`age`, `sex`, `chest pain type`, `resting bp s`, `cholesterol`, `fasting blood sugar`, `resting ecg`, `max heart rate`, `exercise angina`, `oldpeak`, `ST slope`
+
+## Approach
+
+1. **Exploratory analysis:** summarize and visualize each feature to understand the data before modeling.
+2. **Model search:** compare network structures, from simple feedforward networks to more complex architectures.
+3. **Parameter optimization:** tune regularization and learning rates to improve generalization.
+4. **Final model:** train the best structure with the optimized parameters and evaluate it on held-out data.
+
+## Run it
+
+Requires Python 3.10+.
+
+```bash
+pip install tensorflow scikit-learn pandas numpy matplotlib seaborn jupyter
+jupyter notebook
+```
+
+Open the notebooks in order (EDA, parameter optimization, final model). Each one reads the CSV from the repository folder.
+
+## Report
+
+`CardioVisionAI_Project_Report.pdf` ties the project together: data preprocessing, exploratory analysis, model selection, optimization and final evaluation.
+
+---
+
+*Originally published on the `ivanradonjic` GitHub account (June 2024); moved here with its full commit history.*
