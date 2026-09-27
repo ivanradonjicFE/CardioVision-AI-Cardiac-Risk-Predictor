@@ -1,4 +1,4 @@
-# CardioVision AI: TensorFlow Cardiac Risk Predictor
+# CardioVision AI - Cardiac Risk Predictor
 
 A neural network built with TensorFlow that predicts heart disease from routine clinical measurements.
 
